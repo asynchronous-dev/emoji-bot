@@ -1,0 +1,29 @@
+service: botsby-brainstorm
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: us-west-2
+  environment:
+    SLACK_BOT_TOKEN: ${env:SLACK_BOT_TOKEN}
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+custom:
+  webpack:
+    includeModules: true # Node modules configuration for packaging
+    packager: "yarn" # Packager that will be used to package your external modules
+
+functions:
+  event:
+    handler: src/handler.event
+    events:
+      - http:
+          path: event
+          method: post
