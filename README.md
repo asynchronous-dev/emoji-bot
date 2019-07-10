@@ -31,13 +31,13 @@ This Slack app authenticates as a user, not as a bot. Currently bots have no way
   - [Add the app](https://api.slack.com/apps)
 - Add an event subscription `https://api.slack.com/apps/<your app id>/event-subscriptions`
   - The `Request URL` should look like `https://<your ngrok url>/event`
-  - Subscribe to the `file_created` Workspace Event.
-  ![event_scope](docs/event_scopes.png)
+  - Subscribe to the `file_shared` Bot Event.
+    ![event_scope](docs/event_scopes.png)
   - Save
 - Install the App in your workspace: `https://api.slack.com/apps/<your app id>/install-on-team`
 
 ### Upload Some Images
 
-Just drag an image file into your Slack window. Once the file is uploaded, the App will send you a direct message with the new emoji that was added. The file name of the uploaded image will be used for the emoji name (emoji_test.gif will be :emoji_test:).
+Just drag an image file into your Slack window and share it with the bot. Once the file is uploaded, the App will send you a direct message with the new emoji that was added. The file name of the uploaded image will be used for the emoji name (emoji_test.gif will be :emoji_test:).
 
 ![uploading](docs/upload.gif)
