@@ -1,2 +1,2 @@
 // eslint-disable-next-line camelcase
-export file_created from './file_created';
+export file_shared from './file_shared';
